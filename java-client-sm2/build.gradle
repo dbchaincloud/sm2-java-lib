@@ -12,6 +12,17 @@ afterEvaluate {
                 groupId = 'com.github.dbchaincloud'
                 artifactId = 'sm2-java-lib'
                 version = '1.0.0'
+
+                //generate pom nodes for dependencies
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    configurations.compile.allDependencies.each { dependency ->
+                        def dependencyNode = dependenciesNode.appendNode('dependency')
+                        dependencyNode.appendNode('groupId', dependency.group)
+                        dependencyNode.appendNode('artifactId', dependency.name)
+                        dependencyNode.appendNode('version', dependency.version)
+                    }
+                }
             }
         }
     }
