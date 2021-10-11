@@ -4,29 +4,20 @@ plugins {
     id 'maven-publish'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            maven(MavenPublication) {
-                artifact "$buildDir/outputs/aar/sdk-release.aar"
-                groupId = 'com.github.dbchaincloud'
-                artifactId = 'sm2-java-lib'
-                version = '1.0.0'
+group = 'com.github.dbchaincloud'
 
-                //generate pom nodes for dependencies
-                pom.withXml {
-                    def dependenciesNode = asNode().appendNode('dependencies')
-                    configurations.compile.allDependencies.each { dependency ->
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', dependency.group)
-                        dependencyNode.appendNode('artifactId', dependency.name)
-                        dependencyNode.appendNode('version', dependency.version)
-                    }
-                }
-            }
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.github.dbchaincloud'
+//                artifactId = 'sm2-java-lib'
+//                version = '1.0.0'
+//            }
+//        }
+//    }
+//}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
