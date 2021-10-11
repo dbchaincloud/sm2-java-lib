@@ -7,8 +7,8 @@ plugins {
 afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-//                from components.release
+            maven(MavenPublication) {
+                artifact "$buildDir/outputs/aar/sdk-release.aar"
                 groupId = 'com.github.dbchaincloud'
                 artifactId = 'sm2-java-lib'
                 version = '1.0.0'
