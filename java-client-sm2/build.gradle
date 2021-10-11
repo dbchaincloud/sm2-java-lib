@@ -4,20 +4,18 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.dbchaincloud'
-
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.github.dbchaincloud'
-//                artifactId = 'sm2-java-lib'
-//                version = '1.0.0'
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from(components["kotlin"])
+                groupId = 'com.github.dbchaincloud'
+                artifactId = 'sm2-java-lib'
+                version = '1.0.0'
+            }
+        }
+    }
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
