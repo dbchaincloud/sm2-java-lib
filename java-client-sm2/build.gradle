@@ -11,7 +11,7 @@ afterEvaluate {
                 from(components["kotlin"])
                 groupId = 'com.github.dbchaincloud'
                 artifactId = 'sm2-java-lib'
-                version = '1.0.7'
+                version = '1.0.8'
             }
         }
     }
@@ -23,7 +23,7 @@ java {
 }
 
 dependencies {
-    api 'com.github.dbchaincloud:dbchain-java-client:v1.0.2'
+    api 'com.github.dbchaincloud:dbchain-java-abstract-lib:v1.0.1'
     implementation 'org.bouncycastle:bcprov-jdk15on:1.67'
     implementation 'org.bouncycastle:bcpkix-jdk15on:1.67'
 }

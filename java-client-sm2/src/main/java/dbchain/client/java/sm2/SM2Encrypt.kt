@@ -1,7 +1,6 @@
 package dbchain.client.java.sm2
 
-import com.gcigb.dbchain.IDBChainEncrypt
-import org.bitcoinj.crypto.DeterministicKey
+import dbchain.java.client.base.IDBChainEncrypt
 import org.bouncycastle.crypto.params.ECPublicKeyParameters
 
 class SM2Encrypt : IDBChainEncrypt {
