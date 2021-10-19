@@ -15,9 +15,9 @@ class BaseApplication:Application() {
 
     private fun init() {
         val appCode = "Your AppCode"
-        val baseUrl = "http://192.168.0.19:3001/relay/"
+        val baseUrl = "http://192.168.0.19/relay/"
         val chainId = "testnet"
-        val debug = true
+        val debug = false
         DBChain.init(
             appCode = appCode,
             baseUrl = baseUrl,
@@ -29,18 +29,18 @@ class BaseApplication:Application() {
         )
         // val dbChainKey = MnemonicClient.generateMnemonic()
         val list = listOf(
-            "drastic",
-            "horse",
-            "focus",
-            "about",
-            "know",
-            "bone",
-            "trophy",
-            "seek",
-            "insane",
-            "thing",
-            "clump",
-            "same"
+            "tooth",
+            "source",
+            "tiny",
+            "frost",
+            "biology",
+            "island",
+            "tent",
+            "alien",
+            "sure",
+            "easily",
+            "fancy",
+            "roast"
         )
         val dbChainKey = MnemonicClient.importMnemonic(list)
         DBChain.withDBChainKey(dbChainKey)
