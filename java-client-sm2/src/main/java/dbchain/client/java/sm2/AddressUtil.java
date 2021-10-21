@@ -19,7 +19,7 @@ public class AddressUtil {
         byte[] converted;
         try {
             converted = convertBits(hash, 8, 5, true);
-            result = bech32Encode("cosmos".getBytes(), converted);
+            result = bech32Encode("dbchain".getBytes(), converted);
         } catch (Exception e) {
             e.printStackTrace();
         }
